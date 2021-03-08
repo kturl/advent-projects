@@ -11,8 +11,11 @@ function sortArray(arr) {
 function compareSum(inputNumbers, inputTotal) {
   let i = 0
   let j = inputNumbers.length - 1
-  while (i < j) {
-    if (inputNumbers[i] + inputNumbers[j] === inputTotal) {
+  while (i <= j) {
+    if (i === j) {
+      console.log('No Match')
+      return 0
+    } else if (inputNumbers[i] + inputNumbers[j] === inputTotal) {
       console.log('Lower Number: ' + inputNumbers[i])
       console.log('Higher Number: ' + inputNumbers[j])
       console.log('Sum: ' + (inputNumbers[i] + inputNumbers[j]))
@@ -22,9 +25,6 @@ function compareSum(inputNumbers, inputTotal) {
       i++
     } else if (inputNumbers[i] + inputNumbers[j] > inputTotal) {
       j--
-    } else {
-      console.log('No Match')
-      return 0
     }
   }
 }
@@ -33,5 +33,4 @@ function solve(inputNumbers, inputTotal) {
   sortArray(inputNumbers)
   console.log(inputNumbers)
   compareSum(inputNumbers, inputTotal)
-  console.log('DICK!')
 }
